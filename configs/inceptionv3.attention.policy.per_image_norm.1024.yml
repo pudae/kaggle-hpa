@@ -1,0 +1,37 @@
+data:
+  name: 'DefaultDataset'
+  dir: 'data'
+  params:
+    idx_fold: 0
+    num_fold: 5
+
+model:
+  name: 'attention_inceptionv3'
+  params:
+    attention_size: 30
+    aux_attention_size: 62
+
+train:
+  dir: './results/inceptionv3.attention.policy.per_image_norm.1024'
+  batch_size: 24 
+  num_epochs: 28
+  num_grad_acc: 2
+
+eval:
+  batch_size: 2
+
+loss:
+  name: 'binary_focal_loss'
+
+optimizer:
+  name: 'adam'
+  params:
+    lr: 0.0005
+
+transform:
+  name: 'policy_transform'
+  num_preprocessor: 4
+  params:
+    policies: 'data/best_policy.data'
+    per_image_norm: True
+    size: 1024

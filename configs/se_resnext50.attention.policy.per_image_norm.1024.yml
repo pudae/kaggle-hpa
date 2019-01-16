@@ -1,0 +1,37 @@
+data:
+  name: 'DefaultDataset'
+  dir: 'data'
+  params:
+    idx_fold: 0
+    num_fold: 5
+
+model:
+  name: 'attention'
+  params:
+    cnn: 'se_resnext50'
+    attention_size: 32
+
+train:
+  dir: './results/se_resnext50.attention.per_image_norm.1024'
+  batch_size: 8
+  num_epochs: 23
+  num_grad_acc: 4
+
+eval:
+  batch_size: 4
+
+loss:
+  name: 'binary_focal_loss'
+
+optimizer:
+  name: 'adam'
+  params:
+    lr: 0.0005
+
+transform:
+  name: 'policy_transform'
+  num_preprocessor: 4
+  params:
+    policies: 'data/best_policy.data'
+    per_image_norm: True
+    size: 1024

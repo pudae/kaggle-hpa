@@ -1,0 +1,16 @@
+tqdm==4.29.1
+requests==2.21.0
+numpy==1.15.4
+pandas==0.23.4
+Pillow==5.3.0
+scipy==1.1.0
+ImageHash==4.0
+iterative-stratification==0.1.6
+torch==1.0.0
+torchvision==0.2.1
+pretrainedmodels==0.7.4
+tensorboardX==1.5
+opencv-python==3.4.4.19
+albumentations==0.1.8
+PyYAML==3.13
+easydict==1.9

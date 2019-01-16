@@ -1,0 +1,26 @@
+data:
+  name: 'SmallDataset'
+  dir: 'data'
+
+model:
+  name: 'resnet18'
+
+train:
+  dir: './results/search'
+  batch_size: 32
+  num_epochs: 60
+
+loss:
+  name: 'binary_focal_loss'
+
+optimizer:
+  name: 'adam'
+  params:
+    lr: 0.0005
+
+transform:
+  name: 'policy_transform'
+  num_preprocessor: 4
+  params:
+    per_image_norm: True
+    size: 256
